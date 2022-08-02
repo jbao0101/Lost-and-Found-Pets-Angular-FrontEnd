@@ -3,11 +3,15 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { SignupComponent } from './signup/signup.component';
+import { MapComponent } from './map/map.component';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SignupComponent
+    SignupComponent,
+    MapComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule
