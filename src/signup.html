@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <div>
+        <head>
+            <link rel="stylesheet" href="styles.css">
+        </head>
+    </div>
+    <div>
+        <body id="body">
+            <div class="nav-bar">
+                <ul>
+                    <li>tHome</li>
+                    <li>Search</li>
+                    <li>Animals To Foster</li>
+                    <li style="float:right">Sign Up</li>
+                </ul>
+                <br>
+                <br>
+            </div>
+            <h1>Start Your Free Alert</h1>
+            <div class="sign_up_block">
+                <div class="sign_up_header"><h2>Sign Up</h2></div>
+                <div class="sign_up_form">
+                    <br>
+                    <form>
+                        <div class="userinfo">
+                            <label for="username">Username:</label>
+                            <input type="text" id="username" name="username">
+                            <label for="password">Password:</label>
+                            <input type="text" id="password" name="password">
+                        </div>
+                        <br>
+                        <br>
+                        <div class="petstatus">
+                            <input type="checkbox" id="lost" value="lost">
+                            <label for="lost">Lost</label>
+                            <input type="checkbox" id="found" value="found">
+                            <label for="found">Found</label>
+                        </div>
+                        <br>
+                        <div>
+                            <label for="start">Date Lost/Found:</label>
+                            <input type="date" id="start" name="trip-start" value="2022-07-26" min="2021-01-01" max="2032-12-31">
+                        </div>
+                        <br>
+                        <div class="petname">                        
+                            <label for="petname">Your Pet's/Found Pet's Name:</label><br>
+                            <input type="text" id="petname" name="petname"><br>
+                        </div>
+                        <div class="firstname">                        
+                            <label for="firstname">Owner's First Name:</label><br>
+                            <input type="text" id="firstname" name="firstname"><br>
+                        </div>
+                        <div class="lastname">                        
+                            <label for="lastname">Owner's Last Name:</label><br>
+                            <input type="text" id="lastname" name="lastname"><br>
+                        </div>
+                        <div class="contactnumber">                        
+                            <label for="contactnumber">Contact Number:</label><br>
+                            <input type="text" id="contactnumber" name="contactnumber"><br>
+                        </div>
+                        <div class="contactemail">                        
+                            <label for="contactemail">Contact Email:</label><br>
+                            <input type="text" id="contactemail" name="contactemail"><br>
+                        </div>
+                        <div class="nearestloc">                        
+                            <label for="nearestloc">Nearest Address Location Seen:</label><br>
+                            <input type="text" id="nearestloc" name="nearestloc"><br>
+                        </div>
+                        <div class="microchip_id">                        
+                            <label for="microchip_id">Microchip Id:</label><br>
+                            <input type="text" id="microchip_id" name="microchip_id" placeholder="Optional"><br><br>
+                        </div>
+                        <div class="pet_picture">                        
+                            <label for="pet_picture">Picture of Your Pet/Found Pet:</label><br>
+                            <input name="pet_picture" type="file"><br><br>
+                        </div>
+                        <div class="pet_description">                        
+                            <label for="pet_description">Description of Your Pet/Found Pet:</label><br>
+                            <textarea id="pet_description" name="pet_description" rows="4" cols="50"></textarea>
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <input type="checkbox" id="alerts" value="alerts">
+                        <label for="alerts">Sign up for alerts</label><br><br>
+                        <input type="submit" id="submitbutton" value="Submit">
+
+                    </form>
+                </div>
+            </div>
+        </body>
+    </div>
+</html>
