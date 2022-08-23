@@ -17,11 +17,26 @@ export class MapComponent implements OnInit{
 
     loader.load().then(() => {
 
-  let map: google.maps.Map
-  let infoWindow: google.maps.InfoWindow
-  let service: google.maps.places.PlacesService
+    let map: google.maps.Map
+    let infoWindow: google.maps.InfoWindow
+    let service: google.maps.places.PlacesService
 
-  function initMap(): void {
+    let autocomplete = new google.maps.places.Autocomplete(document.getElementById("input"), {
+      componentRestrictions: {'country': ['us']},
+      fields: ['geometry', 'name'],
+      types: ['establishment']
+    })
+
+    autocomplete.addListener("place_changed", () => {
+      const place = autocomplete.getPlace();
+      new google.maps.Marker({
+        position: place.geometry.location,
+        title: place.name,
+        map: map
+      })
+    })
+
+    function initMap(): void {
     var location = { lat: -38.7131, lng: 90.4298 };
 
     if(navigator.geolocation) {
@@ -33,13 +48,13 @@ export class MapComponent implements OnInit{
         zoom: 12
       })
     },
-    (err) => {
-      map = new google.maps.Map(document.getElementById('map'), {
-        center: location,
-        zoom: 12
+      (err) => {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: location,
+          zoom: 12
+        })
       })
-    })
-  }
+    }
 
   map = new google.maps.Map(document.getElementById('map'), {
       center: location,
