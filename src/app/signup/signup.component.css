@@ -1,0 +1,17 @@
+form{
+    align-items: center;
+    justify-content:center;
+    position: relative;
+    float:inline-end;
+    margin-right: 250px;
+}
+
+#sign_up_form{
+    display:inline-block;
+}
+
+.ted_icon{
+    margin-left: 75px;
+    width: 40%;
+    height: 400px;
+}
