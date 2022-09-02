@@ -9,16 +9,17 @@ declare const google: any;
 export class AppComponent implements OnInit{
   title = 'google-maps';
 
-  ngOnInit(): void {
-    let loader = new Loader({
-      apiKey: 'AIzaSyAVUb8DbYfWr3ylaxt5hMIuhmZeBeSfiJM'
-    })
+  ngOnInit(){}
+  // : void {
+  //   let loader = new Loader({
+  //     apiKey: 'AIzaSyAVUb8DbYfWr3ylaxt5hMIuhmZeBeSfiJM'
+  //   })
 
-    loader.load().then(() => {
-      new google.maps.Map(document.getElementById("map"),{
-        center: {lat: 38.6270, lng: -90.1994},
-        zoom: 10,
-      })
-    })
-  }
+  //   loader.load().then(() => {
+  //     new google.maps.Map(document.getElementById("map"),{
+  //       center: {lat: 38.6270, lng: -90.1994},
+  //       zoom: 10,
+  //     })
+  //   })
+  // }
 }
