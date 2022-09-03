@@ -7,52 +7,51 @@
     </div> -->
     <div>
         <body id="body">
-            <div class="nav-bar">
-                <ul>
-                    <li>Home</li>
-                    <li>Search</li>
-                    <a></a><li>Map</li>
-                    <li style="float:right">Sign Up</li>
-                </ul>
-                <br>
-                <br>
-            </div>
-            <h1>Start Your Free Alert</h1>
+            <header>
+                <nav>
+                    <ul class="nav-links">
+                        <li><a href='shop.html'>HOME</a></li>
+                        <li><a href='#'>SEARCH</a></li>
+                        <li><a href='#'>MAP</a></li>
+                        <li><a href='about.html'>ABOUT</a></li>
+                    </ul>
+                </nav>
+            </header>
             <div class="sign_up_block">
                 <div class="sign_up_form">
                     <img class="ted_icon" src="/assets/images/Spotted_Logo_Ted_Icon.png">
                     <form>
                         <div class="petstatus">
-                            <input type="checkbox" id="lost" value="lost">
+                            <input name="status" type="checkbox" id="lost" value="lost">
                             <label for="lost">Lost</label>
-                            <input type="checkbox" id="found" value="found">
+                            <input name="status" type="checkbox" id="found" value="found">
                             <label for="found">Found</label>
                         </div>
                         <br>
                         <div>
                             <label for="start">Date Lost/Found:</label>
-                            <input type="date" id="start" name="trip-start" value="2022-07-26" min="2021-01-01" max="2032-12-31">
+                            <input name="dateLost" type="date" id="start" name="trip-start" value="2022-07-26" min="2021-01-01" max="2032-12-31">
                         </div>
                         <br>
                         <div class="petname">                        
                             <label for="petname">Your Pet's/Found Pet's Name:</label><br>
-                            <input type="text" id="petname" name="petname"><br>
+                            <input name="name" type="text" id="petname" name="petname"><br>
                         </div>
                         <div class="firstname">                        
                             <label for="firstname">Owner's First Name:</label><br>
-                            <input type="text" id="firstname" name="firstname"><br>
+                            <input name="ownerFirstName" type="text" id="firstname" name="firstname"><br>
                         </div>
                         <div class="lastname">                        
                             <label for="lastname">Owner's Last Name:</label><br>
-                            <input type="text" id="lastname" name="lastname"><br>
+                            <input name="ownerLastName"type="text" id="lastname" name="lastname"><br>
                         </div>
                         <div class="contactnumber">                        
                             <label for="contactnumber">Contact Number:</label><br>
-                            <input type="text" id="contactnumber" name="contactnumber"><br>
+                            <input name="contactNumber" type="text" id="contactnumber" name="contactnumber"><br>
                         </div>
                         <div class="contactemail">                        
                             <label for="contactemail">Contact Email:</label><br>
-                            <input type="text" id="contactemail" name="contactemail"><br>
+                            <input name="contactEmail" type="text" id="contactemail" name="contactemail"><br>
                         </div>
                         <div class="nearestloc">                        
                             <label for="nearestloc">Nearest Address Location Seen:</label><br>
@@ -60,7 +59,7 @@
                         </div>
                         <div class="microchip_id">                        
                             <label for="microchip_id">Microchip Id:</label><br>
-                            <input type="text" id="microchip_id" name="microchip_id" placeholder="Optional"><br><br>
+                            <input name="microchipID" type="text" id="microchip_id" name="microchip_id" placeholder="Optional"><br><br>
                         </div>
                         <div class="pet_picture">                        
                             <label for="pet_picture">Picture of Your Pet/Found Pet:</label><br>
@@ -68,7 +67,7 @@
                         </div>
                         <div class="pet_description">                        
                             <label for="pet_description">Description of Your Pet/Found Pet:</label><br>
-                            <textarea id="pet_description" name="pet_description" rows="4" cols="50"></textarea>
+                            <textarea name="description" id="pet_description" name="pet_description" rows="4" cols="50"></textarea>
                         </div>
                         <br>
                         <br>

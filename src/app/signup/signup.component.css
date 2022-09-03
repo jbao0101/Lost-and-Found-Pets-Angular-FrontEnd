@@ -1,4 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 form{
+    font-family: 'Poppins', sans-serif;
     align-items: center;
     justify-content:center;
     position: relative;
@@ -12,6 +15,52 @@ form{
 
 .ted_icon{
     margin-left: 75px;
-    width: 40%;
+    width: 35%;
     height: 400px;
 }
+
+.nav-links{
+    list-style: none;
+}
+
+.nav-links li{
+    display: inline-block;
+    padding: 0 50px;
+}
+
+.nav-links li a {
+    transition: all 0.3s ease 0s;
+}
+
+.nav-links li a:hover {
+    background-color: rgb(255, 255, 255);
+    color: #fec700;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 24px;
+    padding: 30px 5%;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(255, 255, 255);
+  }
+  
+  li, a {
+    font-family: 'Poppins', sans-serif;
+    color: #060808;
+    text-decoration: none;
+  }
+  
+  
+  /* Change the link color to #111 (black) on hover */
+  li a:hover {
+    background-color: #111;
+  }
