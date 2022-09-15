@@ -86,15 +86,36 @@ export class MapComponent implements OnInit{
 function createMarker(place: google.maps.places.PlaceResult) {
   if (!place.geometry || !place.geometry.location) return;
 
+  const infowindow = new google.maps.InfoWindow();
+
   const marker = new google.maps.Marker({
     map,
     position: place.geometry.location,
   });
 
   google.maps.event.addListener(marker, "click", () => {
-    infoWindow.setContent(place.name || "");
-    infoWindow.open(map);
+
+    const content = document.createElement("div");
+
+    const nameElement = document.createElement("h2");
+
+    nameElement.textContent = place.name!;
+    content.appendChild(nameElement);
+
+    const placeIdElement = document.createElement("p");
+
+    placeIdElement.textContent = place.formatted_phone_number!;
+    content.appendChild(placeIdElement);
+
+    const placeAddressElement = document.createElement("p");
+
+    placeAddressElement.textContent = place.formatted_address!;
+    content.appendChild(placeAddressElement);
+
+    infowindow.setContent(content);
+    infowindow.open(map, marker);
   });
+
 }
 
 }
