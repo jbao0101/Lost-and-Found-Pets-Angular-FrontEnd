@@ -20,6 +20,7 @@
             <div class="sign_up_block">
                 <div class="sign_up_form">
                     <img class="ted_icon" src="/assets/images/Spotted_Logo_Ted_Icon.png">
+                    
                     <form #petForm="ngForm" (ngSubmit)="onPetCreate(petForm.value)">
                         <div class="petstatus">
                             <input name="status" type="checkbox" id="lost" value="lost" ngModel>
