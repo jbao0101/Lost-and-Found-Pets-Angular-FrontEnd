@@ -20,7 +20,12 @@ export class MapComponent implements OnInit{
     let map: google.maps.Map
     let infoWindow: google.maps.InfoWindow
     let service: google.maps.places.PlacesService
-    let geocode: google.maps.Geocoder
+    let geocoder: google.maps.Geocoder
+    let marker: google.maps.Marker;
+
+    // Below commented out code is for an autocomplete feature for an input box I have,
+    // but I question if we need it at all since we won't be looking for any one
+    // establishment.
 
     // let autocomplete = new google.maps.places.Autocomplete(document.getElementById("input"), {
     //   componentRestrictions: {'country': ['us']},
@@ -41,6 +46,7 @@ export class MapComponent implements OnInit{
     // })
 
     function initMap(): void {
+
     var location = { lat: -38.7131, lng: 90.4298 };
 
     if(navigator.geolocation) {
@@ -74,8 +80,70 @@ export class MapComponent implements OnInit{
 
   service = new google.maps.places.PlacesService(map);
   service.textSearch(request, callback);
+
+  //Below is geocoding portion that is not yet fully functional
+
+//   function codeAddress() {
+//     geocoder = new google.maps.Geocoder();
+//     var address = document.getElementById('input')!.innerHTML;
+//     geocoder.geocode( { 'address': address}, function(results, status) {
+//       if (status == 'OK') {
+//         map.setCenter(results![0].geometry.location);
+//         var marker = new google.maps.Marker({
+//             map: map,
+//             position: results![0].geometry.location
+//         });
+//       } else {
+//         alert('Geocode was not successful for the following reason: ' + status);
+//       }
+//     });
+//   }
+
+//   const submitButton = document.getElementById('submitButton');
+
+//   if (submitButton != null){
+//     submitButton.addEventListener("click", () =>
+//     codeAddress()
+//   );
+// }
+
+  geocoder = new google.maps.Geocoder();
+
+  marker = new google.maps.Marker({
+    map,
+  });
+
+  const submitButton = document.getElementById('submitButton');
+  const inputText = document.getElementById('input');
+  const inputValue = (<HTMLInputElement>inputText).value;
+  console.log(inputValue)
+  if (submitButton != null){
+    submitButton.addEventListener("click", () =>
+    console.log(inputValue)
+    // geocode({ address: inputValue })
+  );
 }
 
+  function geocode(request: google.maps.GeocoderRequest): void {
+  
+    geocoder
+      .geocode(request)
+      .then((result) => {
+        const { results } = result;
+  
+        map.setCenter(results[0].geometry.location);
+        marker.setPosition(results[0].geometry.location);
+        marker.setMap(map);
+        return results[0].geometry.location;
+      })
+      .catch((e) => {
+        alert("Geocode was not successful for the following reason: " + e);
+        console.log(e)
+      });
+
+}
+
+  //callback function to help with map marker creation
   function callback(results: string | any, status: any) {
   if (status == google.maps.places.PlacesServiceStatus.OK) {
     for (var i = 0; i < results.length; i++) {
@@ -83,20 +151,43 @@ export class MapComponent implements OnInit{
     }
   }
 
+  //function that creates markers on the map
 function createMarker(place: google.maps.places.PlaceResult) {
   if (!place.geometry || !place.geometry.location) return;
+
+  const infowindow = new google.maps.InfoWindow();
 
   const marker = new google.maps.Marker({
     map,
     position: place.geometry.location,
   });
 
+  //function that displays infowindow when a marker is clicked
   google.maps.event.addListener(marker, "click", () => {
-    infoWindow.setContent(place.name || "");
-    infoWindow.open(map);
-  });
-}
 
+    const content = document.createElement("div");
+
+    const nameElement = document.createElement("h2");
+
+    nameElement.textContent = place.name!;
+    content.appendChild(nameElement);
+
+    const placeIdElement = document.createElement("p");
+
+    placeIdElement.textContent = place.formatted_phone_number!;
+    content.appendChild(placeIdElement);
+
+    const placeAddressElement = document.createElement("p");
+
+    placeAddressElement.textContent = place.formatted_address!;
+    content.appendChild(placeAddressElement);
+
+    infowindow.setContent(content);
+    infowindow.open(map, marker);
+  });
+
+}
+  }
 }
 
 initMap()
