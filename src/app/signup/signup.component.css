@@ -109,6 +109,10 @@ ul {
     margin-left: 25px;
   }
 
+  .right-column{
+    margin-left: auto;
+  }
+
   .right-column img{
     display: block;
     margin-left: auto;
