@@ -53,10 +53,10 @@
                         </div> -->
                         <div class="right-column">
                             <form #petForm="ngForm" (ngSubmit)="onPetCreate(petForm.value)">
-                                <div class="petstatus" id="status">
-                                    <input name="status" type="checkbox" id="lost" value="lost" ngModel>
+                                <div class="petstatus">
+                                    <input name="status" type="checkbox" id="status" value="lost" ngModel>
                                     <label for="lost">Lost</label>
-                                    <input name="status" type="checkbox" id="found" value="found" ngModel>
+                                    <input name="status" type="checkbox" id="status" value="found" ngModel>
                                     <label for="found">Found</label>
                                 </div>
                                 <br>

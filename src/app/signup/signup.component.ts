@@ -19,7 +19,7 @@ export class SignupComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onPetCreate(pet: {name: string, status: string, date: string, ownerFirstName: string, ownerLastName: string, contactNumber: string, contactEmail: string, location: string, microchipID:string, picture:string, description:string}){
+  onPetCreate(pet: {name: string, status: string, date: string, ownerFirstName: string, ownerLastName: string, contactNumber: string, contactEmail: string, lastLocationSeen: string, microchipID:string, imageUrl:string, description:string}){
     const petNameValue = (<HTMLInputElement>document.getElementById("petname")).value;
     const statusValue = (<HTMLInputElement>document.getElementById("status")).value;
     const dateValue = (<HTMLInputElement>document.getElementById("start")).value;
@@ -39,9 +39,9 @@ export class SignupComponent implements OnInit {
     pet.ownerLastName = ownerLastNameValue
     pet.contactNumber = contactNumberValue
     pet.contactEmail = contactEmail
-    pet.location = nearestLocValue
+    pet.lastLocationSeen = nearestLocValue
     pet.microchipID = microchipIdValue
-    pet.picture = petPictureValue
+    pet.imageUrl = petPictureValue
     pet.description = petDescriptionValue
 
     console.log(pet)
