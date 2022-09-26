@@ -1,5 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { CorsOptions } from 'cors';
+import { CorsRequest } from 'cors';
+import { Express } from 'express'
+import { stat } from 'fs';
+declare var require: any;
+
 
 @Component({
   selector: 'app-signup',
@@ -13,31 +19,33 @@ export class SignupComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onPetCreate(pet: {name: string, status: string, ownerFirstName: string, ownerLastName: string, contactNumber: string, contactEmail: string, microchipID:string,description:string}){
-    
-    fetch("http://localhost:8080", { method: 'POST', credentials: "include"})
-    .then(res => res.json())
-    .then(data => console.log(data))
-    
-    const express = require("express")
-    const app = express()
-    const cors = require("cors")
+  onPetCreate(pet: {name: string, status: string, date: string, ownerFirstName: string, ownerLastName: string, contactNumber: string, contactEmail: string, location: string, microchipID:string, picture:string, description:string}){
+    const petNameValue = (<HTMLInputElement>document.getElementById("petname")).value;
+    const statusValue = (<HTMLInputElement>document.getElementById("status")).value;
+    const dateValue = (<HTMLInputElement>document.getElementById("start")).value;
+    const ownerFirstNameValue = (<HTMLInputElement>document.getElementById("firstname")).value;
+    const ownerLastNameValue = (<HTMLInputElement>document.getElementById("lastname")).value;
+    const contactNumberValue = (<HTMLInputElement>document.getElementById("contactnumber")).value;
+    const contactEmail = (<HTMLInputElement>document.getElementById("contactemail")).value;
+    const nearestLocValue = (<HTMLInputElement>document.getElementById("nearestloc")).value;
+    const microchipIdValue = (<HTMLInputElement>document.getElementById("microchip_id")).value;
+    const petPictureValue = (<HTMLInputElement>document.getElementById("pet_picture")).value;
+    const petDescriptionValue = (<HTMLInputElement>document.getElementById("pet_description")).value;
 
-    app.use(
-      cors({
-        origin: "*",
-        credentials: true,
-      })
-    )
-
-      app.get("/data", (req: any, res: { json: (arg0: { name: string; }) => void; }) => {
-        res.json({ name: "Kyle"})
-      })
-
-      app.listen(8080)
+    pet.name = petNameValue
+    pet.status = statusValue
+    pet.date = dateValue
+    pet.ownerFirstName = ownerFirstNameValue
+    pet.ownerLastName = ownerLastNameValue
+    pet.contactNumber = contactNumberValue
+    pet.contactEmail = contactEmail
+    pet.location = nearestLocValue
+    pet.microchipID = microchipIdValue
+    pet.picture = petPictureValue
+    pet.description = petDescriptionValue
 
     console.log(pet)
-    this.http.post('http://localhost:8080/pet/add/pet.json',pet)
+    this.http.post('http://localhost:8080/pet/add',pet)
     .subscribe((res) => {
       console.log(res);
     });
