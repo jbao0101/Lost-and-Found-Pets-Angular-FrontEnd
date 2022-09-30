@@ -14,12 +14,13 @@ form{
 }
 
 .ted_icon{
-    margin-left: 75px;
-    width: 80%;
-    height: 450px;
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.nav-links{
+/* .nav-links{
     list-style: none;
 }
 
@@ -35,7 +36,7 @@ form{
 .nav-links li a:hover {
     background-color: rgb(255, 255, 255);
     color: #fec700;
-}
+} */
 
 header {
     display: flex;

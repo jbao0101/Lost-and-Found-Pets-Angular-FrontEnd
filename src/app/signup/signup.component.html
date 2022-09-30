@@ -6,16 +6,17 @@
         </head>
     </div> -->
     <div>
+        <a name="about"><img class="ted_icon" src="/assets/images/Spotted_Logo_Ted_Icon.png"></a>
         <body id="body">
             <header>
-                <nav>
+                <!-- <nav>
                     <ul class="nav-links">
                         <li><a href=''>HOME</a></li>
                         <li><a href='#search'>SEARCH</a></li>
                         <li><a href='#map'>MAP</a></li>
                         <li><a href='#about'>ABOUT</a></li>
                     </ul>
-                </nav>
+                </nav> -->
 
                 <!-- <div class="nav-bar">
                     <ul>
@@ -36,7 +37,7 @@
                 <div class="sign_up_form">
                     <div class="banner">
                         <div class="left-column">
-                        <a name="about"><img class="ted_icon" src="/assets/images/Spotted_Logo_Ted_Icon.png"></a>
+                        <!-- <a name="about"><img class="ted_icon" src="/assets/images/Spotted_Logo_Ted_Icon.png"></a> -->
                         <h2 id="mainHeading">Our mission is to help reunite our furry friends to their families</h2>
                         <p>If your pet has recently gone missing, or you've found a furry friend that may belong to someone, you have come to the right spot. We make it easy for you to post lost and found listings and search through our lost and found records. It is very important to bring awareness of lost or found pets as soon as possible in order to have a quick, happy reunion with their family who misses them so much.</p>
                            <h2>Here are some helpful tips for finding your lost pets: </h2>
@@ -51,68 +52,68 @@
                         <!-- <div class="right-column">
                            <img src="https://lh3.googleusercontent.com/FXeAAChFXVEhctxtv1OMRe78qjExGyzHq9lEcObzQzqg8gPHztua0gB8ajzDBRO5QBwPpLmtQ0OKPRw7TWfwjk8Yv0HIVDpPjq38vrBVaRUV7Itkj8QCf4anyRTp5ay_tajLBDQpD3A=w2400">
                         </div> -->
-                        <div class="right-column">
-                            <form #petForm="ngForm" (ngSubmit)="onPetCreate(petForm.value)">
-                                <div class="petstatus">
-                                    <input name="status" type="checkbox" id="status" value="lost" ngModel>
-                                    <label for="lost">Lost</label>
-                                    <input name="status" type="checkbox" id="status" value="found" ngModel>
-                                    <label for="found">Found</label>
-                                </div>
-                                <br>
-                                <div>
-                                    <label for="start">Date Lost/Found:</label>
-                                    <input name="dateLost" type="date" id="start" name="trip-start" value="2022-07-26" min="2021-01-01" max="2032-12-31" ngModel>
-                                </div>
-                                <br>
-                                <div class="petname">                        
-                                    <label for="petname">Your Pet's/Found Pet's Name:</label><br>
-                                    <input name="name" type="text" id="petname" name="petname" ngModel><br>
-                                </div>
-                                <div class="firstname">                        
-                                    <label for="firstname">Owner's First Name:</label><br>
-                                    <input name="ownerFirstName" type="text" id="firstname" name="firstname" ngModel><br>
-                                </div>
-                                <div class="lastname">                        
-                                    <label for="lastname">Owner's Last Name:</label><br>
-                                    <input name="ownerLastName"type="text" id="lastname" name="lastname" ngModel><br>
-                                </div>
-                                <div class="contactnumber">                        
-                                    <label for="contactnumber">Contact Number:</label><br>
-                                    <input name="contactNumber" type="text" id="contactnumber" name="contactnumber" ngModel><br>
-                                </div>
-                                <div class="contactemail">                        
-                                    <label for="contactemail">Contact Email:</label><br>
-                                    <input name="contactEmail" type="text" id="contactemail" name="contactemail" ngModel    ><br>
-                                </div>
-                                <div class="nearestloc">                        
-                                    <label for="nearestloc">Nearest Address Location Seen:</label><br>
-                                    <input type="text" id="nearestloc" name="nearestloc"><br>
-                                </div>
-                                <div class="microchip_id">                        
-                                    <label for="microchip_id">Microchip Id:</label><br>
-                                    <input name="microchipID" type="text" id="microchip_id" name="microchip_id" placeholder="Optional"><br><br>
-                                </div>
-                                <div class="pet_picture">                        
-                                    <label for="pet_picture">Picture of Your Pet/Found Pet:</label><br>
-                                    <input name="pet_picture" type="file" id="pet_picture"><br><br>
-                                </div>
-                                <div class="pet_description">                        
-                                    <label for="pet_description">Description of Your Pet/Found Pet:</label><br>
-                                    <textarea name="description" id="pet_description" name="pet_description" rows="4" cols="50"></textarea>
-                                </div>
-                                <br>
-                                <br>
-                                <br>
-                                <input type="checkbox" id="alerts" value="alerts">
-                                <label for="alerts">Sign up for alerts</label><br><br>
-                                <input type="submit" id="submitbutton" value="Submit">
-        
-                            </form>
-                           </div> 
                   </div>
                 </div>
             </div>
+            <div class="right-column">
+                <form #petForm="ngForm" (ngSubmit)="onPetCreate(petForm.value)">
+                    <div class="petstatus">
+                        <input name="status" type="checkbox" id="status" value="lost" ngModel>
+                        <label for="lost">Lost</label>
+                        <input name="status" type="checkbox" id="status" value="found" ngModel>
+                        <label for="found">Found</label>
+                    </div>
+                    <br>
+                    <div>
+                        <label for="start">Date Lost/Found:</label>
+                        <input name="dateLost" type="date" id="start" name="trip-start" value="2022-07-26" min="2021-01-01" max="2032-12-31" ngModel>
+                    </div>
+                    <br>
+                    <div class="petname">                        
+                        <label for="petname">Your Pet's/Found Pet's Name:</label><br>
+                        <input name="name" type="text" id="petname" name="petname" ngModel><br>
+                    </div>
+                    <div class="firstname">                        
+                        <label for="firstname">Owner's First Name:</label><br>
+                        <input name="ownerFirstName" type="text" id="firstname" name="firstname" ngModel><br>
+                    </div>
+                    <div class="lastname">                        
+                        <label for="lastname">Owner's Last Name:</label><br>
+                        <input name="ownerLastName"type="text" id="lastname" name="lastname" ngModel><br>
+                    </div>
+                    <div class="contactnumber">                        
+                        <label for="contactnumber">Contact Number:</label><br>
+                        <input name="contactNumber" type="text" id="contactnumber" name="contactnumber" ngModel><br>
+                    </div>
+                    <div class="contactemail">                        
+                        <label for="contactemail">Contact Email:</label><br>
+                        <input name="contactEmail" type="text" id="contactemail" name="contactemail" ngModel    ><br>
+                    </div>
+                    <div class="nearestloc">                        
+                        <label for="nearestloc">Nearest Address Location Seen:</label><br>
+                        <input type="text" id="nearestloc" name="nearestloc"><br>
+                    </div>
+                    <div class="microchip_id">                        
+                        <label for="microchip_id">Microchip Id:</label><br>
+                        <input name="microchipID" type="text" id="microchip_id" name="microchip_id" placeholder="Optional"><br><br>
+                    </div>
+                    <div class="pet_picture">                        
+                        <label for="pet_picture">Picture of Your Pet/Found Pet:</label><br>
+                        <input name="pet_picture" type="file" id="pet_picture"><br><br>
+                    </div>
+                    <div class="pet_description">                        
+                        <label for="pet_description">Description of Your Pet/Found Pet:</label><br>
+                        <textarea name="description" id="pet_description" name="pet_description" rows="4" cols="50"></textarea>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <input type="checkbox" id="alerts" value="alerts">
+                    <label for="alerts">Sign up for alerts</label><br><br>
+                    <input type="submit" id="submitbutton" value="Submit">
+
+                </form>
+               </div> 
         </body>
     </div>
 </html>
