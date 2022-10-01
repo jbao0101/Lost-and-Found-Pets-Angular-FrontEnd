@@ -5,6 +5,7 @@
             <link rel="stylesheet" href="signup.component.css">
         </head>
     </div> -->
+    <script src="signup.component.js"></script>
     <div>
         <body id="body">
             <header>
@@ -52,38 +53,38 @@
                            <img src="https://lh3.googleusercontent.com/FXeAAChFXVEhctxtv1OMRe78qjExGyzHq9lEcObzQzqg8gPHztua0gB8ajzDBRO5QBwPpLmtQ0OKPRw7TWfwjk8Yv0HIVDpPjq38vrBVaRUV7Itkj8QCf4anyRTp5ay_tajLBDQpD3A=w2400">
                         </div> -->
                         <div class="right-column">
-                            <form #petForm="ngForm" (ngSubmit)="onPetCreate(petForm.value)">
+                            <form action="" #petForm="ngForm" (ngSubmit)="onPetCreate(petForm.value)" id="signupForm">
                                 <div class="petstatus">
                                     <input name="status" type="checkbox" id="lost" value="lost" ngModel>
                                     <label for="lost">Lost</label>
-                                    <input name="status" type="checkbox" id="found" value="found" ngModel>
+                                    <input name="status" type="checkbox" id="found" value="false" ngModel>
                                     <label for="found">Found</label>
                                 </div>
                                 <br>
                                 <div>
                                     <label for="start">Date Lost/Found:</label>
-                                    <input name="dateLost" type="date" id="start" name="trip-start" value="2022-07-26" min="2021-01-01" max="2032-12-31" ngModel>
+                                    <input name="dateLost" type="date" id="start" name="dateLost" value="2022-07-26" min="2021-01-01" max="2032-12-31" ngModel>
                                 </div>
                                 <br>
                                 <div class="petname">                        
                                     <label for="petname">Your Pet's/Found Pet's Name:</label><br>
-                                    <input name="name" type="text" id="petname" name="petname" ngModel><br>
+                                    <input name="name" type="text" id="petname" name="name" ngModel><br>
                                 </div>
                                 <div class="firstname">                        
                                     <label for="firstname">Owner's First Name:</label><br>
-                                    <input name="ownerFirstName" type="text" id="firstname" name="firstname" ngModel><br>
+                                    <input name="ownerFirstName" type="text" id="firstname" name="ownerFirstName" ngModel><br>
                                 </div>
                                 <div class="lastname">                        
                                     <label for="lastname">Owner's Last Name:</label><br>
-                                    <input name="ownerLastName"type="text" id="lastname" name="lastname" ngModel><br>
+                                    <input name="ownerLastName"type="text" id="lastname" name="ownerLastName" ngModel><br>
                                 </div>
                                 <div class="contactnumber">                        
                                     <label for="contactnumber">Contact Number:</label><br>
-                                    <input name="contactNumber" type="text" id="contactnumber" name="contactnumber" ngModel><br>
+                                    <input name="contactNumber" type="text" id="contactnumber" name="contactNumber" ngModel><br>
                                 </div>
                                 <div class="contactemail">                        
                                     <label for="contactemail">Contact Email:</label><br>
-                                    <input name="contactEmail" type="text" id="contactemail" name="contactemail" ngModel    ><br>
+                                    <input name="contactEmail" type="text" id="contactemail" name="contactEmail" ngModel    ><br>
                                 </div>
                                 <div class="nearestloc">                        
                                     <label for="nearestloc">Nearest Address Location Seen:</label><br>
@@ -91,15 +92,15 @@
                                 </div>
                                 <div class="microchip_id">                        
                                     <label for="microchip_id">Microchip Id:</label><br>
-                                    <input name="microchipID" type="text" id="microchip_id" name="microchip_id" placeholder="Optional"><br><br>
+                                    <input name="microchipID" type="text" id="microchip_id" name="microchipID" placeholder="Optional"><br><br>
                                 </div>
                                 <div class="pet_picture">                        
                                     <label for="pet_picture">Picture of Your Pet/Found Pet:</label><br>
-                                    <input name="pet_picture" type="file"><br><br>
+                                    <input name="imageUrl" type="file"><br><br>
                                 </div>
                                 <div class="pet_description">                        
                                     <label for="pet_description">Description of Your Pet/Found Pet:</label><br>
-                                    <textarea name="description" id="pet_description" name="pet_description" rows="4" cols="50"></textarea>
+                                    <textarea name="description" id="pet_description" name="description" rows="4" cols="50"></textarea>
                                 </div>
                                 <br>
                                 <br>
@@ -109,6 +110,8 @@
                                 <input type="submit" id="submitbutton" value="Submit">
         
                             </form>
+                            <p>{{onPetCreate}}</p>
+
                            </div> 
                   </div>
                 </div>
